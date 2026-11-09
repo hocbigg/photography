@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Hocbigg - Photography</title>
+  <meta name="description" content="Path to a free self-taught education in Photography.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/photography/">
+  <meta property="og:title" content="Hocbigg - Photography">
+  <meta property="og:description" content="Path to a free self-taught education in Photography.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/photography/">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/photography/">Photography</a></li>
+      <li><a href="/photography/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/photography/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/photography" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+<header class="page-header">
+  <img src="/images/logo.png" alt="Hocbigg logo">
+  <h1>Hocbigg - Photography</h1>
+  <p class="page-subtitle">Path to a free self-taught education in Photography.</p>
+  <p class="last-updated"><small>Last updated on: <time datetime="2026-10-08">2026-10-08</time></small></p>
+</header>
+<h2 id="introduction">Introduction</h2>
+<p>Photography is the deliberate practice of shaping light, geometry, and time through an optical tool. While modern digital cameras and computational smartphone algorithms can capture sharp, well-exposed images automatically, self-directed study moves you from incidental captures to intentional visual work. This curriculum provides a rigorous, undergraduate-level foundation for independent learners starting with no prior formal background. All you need to begin is a dedicated camera—whether a DSLR, mirrorless body, or an advanced compact—that allows full manual control over exposure parameters.</p>
+<p>The curriculum is sequenced to take you from foundational camera mechanics to sustained artistic and practical independence:</p>
+<ul>
+<li><strong>Exposure and Mechanics First:</strong> Begin with manual camera operation, optics, and exposure metering so operating the apparatus becomes second nature.</li>
+<li><strong>Visual Grammar and Light:</strong> Build on technical camera control by studying composition and the physical behavior of light, learning how to structure elements inside a frame and manipulate illumination on various surfaces.</li>
+<li><strong>The Digital Darkroom:</strong> Work through digital workflow and parametric raw file development to understand non-destructive editing, tonal curves, and color management.</li>
+<li><strong>Critical Context:</strong> Engage with photographic history and visual theory alongside your technical work to develop visual literacy and evaluate how images convey meaning.</li>
+<li><strong>Continuous Practice:</strong> Treat hands-on shooting and critique not as an endcap, but as an ongoing habit that runs parallel to every other subject. Technical concepts only become second nature through deliberate shooting assignments and rigorous self-evaluation.</li>
+</ul>
+<p>This curriculum focuses strictly on the universal foundations required across every genre of photography. It deliberately omits niche commercial specializations, studio business management, and genre-specific gear setups. Once you have mastered these core competencies, you can explore specialized fields such as photojournalism, studio portraiture, or contemporary fine art in <a href="advanced_topics.html">Advanced Topics</a> and build tangible artifacts like photo essays and photobooks in <a href="projects.html">Projects</a>.</p>
+<h2 id="curriculum">Curriculum</h2>
+<h3 id="camera-and-exposure-fundamentals">Camera and Exposure Fundamentals</h3>
+<p>This subject covers the mechanical, optical, and digital principles of exposure, including focal length, sensor sensitivity, shutter speed, aperture, metering, and full manual camera operation.</p>
+<p><a href="https://sites.google.com/site/marclevoylectures/home" target="_blank" rel="noopener noreferrer">Lectures on Digital Photography (Marc Levoy, Stanford)</a> - A comprehensive eighteen-lecture university course covering optics, sensors, exposure, and image capture for learners seeking a technically rigorous, college-level foundation.</p>
+<p><a href="https://www.coursera.org/learn/exposure-photography" target="_blank" rel="noopener noreferrer">Cameras, Exposure, and Photography (Michigan State University, Coursera)</a> - An interactive, assignment-focused alternative to Levoy's academic lectures, offering a more accessible on-ramp to manual controls for complete beginners.</p>
+<p><a href="https://books.google.com/books?isbn=9781607748502" target="_blank" rel="noopener noreferrer">Understanding Exposure, 4th Edition (Bryan Peterson)</a> - A practical, field-oriented handbook on the exposure triangle, recommended as a companion text to read alongside either video course.</p>
+<h3 id="photographic-composition">Photographic Composition</h3>
+<p>This subject explores the visual syntax of the photographic frame, including balance, framing, line, perspective, color relationships, and the deliberate arrangement of visual elements.</p>
+<p><a href="https://books.google.com/books?isbn=9781840918878" target="_blank" rel="noopener noreferrer">The Photographer's Eye: Definitive Edition (Michael Freeman)</a> - The core textbook on photographic design and spatial organization, teaching how to structure graphic elements inside the viewfinder.</p>
+<p><a href="https://www.coursera.org/learn/photo-composition" target="_blank" rel="noopener noreferrer">Principles of Photo Composition and Digital Image Post-Production (Michigan State University, Coursera)</a> - An interactive alternative or companion to Freeman's book, providing structured shooting assignments and peer reviews centered on composition principles.</p>
+<h3 id="lighting-fundamentals">Lighting Fundamentals</h3>
+<p>This subject covers the physical behavior of light, surface reflectance, contrast ratios, color temperature, and the craft of shaping light using ambient sources, reflectors, and off-camera flash.</p>
+<p><a href="https://strobist.blogspot.com/2006/03/lighting-101.html" target="_blank" rel="noopener noreferrer">Lighting 101 (David Hobby, Strobist)</a> - A structured, project-based online tutorial series that teaches off-camera lighting techniques and light control from absolute zero.</p>
+<p><a href="https://books.google.com/books?isbn=9780367860271" target="_blank" rel="noopener noreferrer">Light: Science and Magic, 6th Edition (Fil Hunter, Steven Biver, Paul Fuqua, Robin Reid)</a> - The canonical theory textbook that builds on hands-on flash practice by explaining the physics of reflection, surface textures, and lighting angles.</p>
+<h3 id="digital-workflow-raw-processing-and-image-management">Digital Workflow: RAW Processing and Image Management</h3>
+<p>This subject covers non-destructive post-processing, digital asset management, histogram-based tone adjustments, color grading, sharpening, noise reduction, and output optimization.</p>
+<p><a href="https://www.cambridgeincolour.com/tutorials/digital-photo-editing-workflow.htm" target="_blank" rel="noopener noreferrer">Digital Photo Editing Workflow (Cambridge in Colour)</a> - A guided, software-agnostic primer detailing the correct sequence of editing operations and the underlying science of raw data conversion.</p>
+<p><a href="https://books.google.com/books?isbn=9780137565337" target="_blank" rel="noopener noreferrer">The Adobe Photoshop Lightroom Classic Book (Scott Kelby)</a> - A step-by-step textbook that operationalizes digital workflow, walking learners through non-destructive catalog organization, develop modules, and export settings.</p>
+<h3 id="history-and-critical-viewing">History and Critical Viewing</h3>
+<p>This subject examines the technological and aesthetic evolution of the photographic medium, developing the critical visual literacy needed to analyze, interpret, and contextualize images.</p>
+<p><a href="https://www.coursera.org/learn/photography" target="_blank" rel="noopener noreferrer">Seeing Through Photographs (The Museum of Modern Art, Coursera)</a> - A guided visual literacy course drawn from MoMA's collection that teaches how to critically examine photographs and understand artist intentionality.</p>
+<p><a href="https://books.google.com/books?isbn=9780312420093" target="_blank" rel="noopener noreferrer">On Photography (Susan Sontag)</a> - A foundational collection of critical essays exploring the social, aesthetic, and philosophical implications of the camera, best read alongside the MoMA course.</p>
+<p><a href="https://books.google.com/books?isbn=9780789213433" target="_blank" rel="noopener noreferrer">A World History of Photography, 5th Edition (Naomi Rosenblum)</a> - A comprehensive historical survey tracing technical and stylistic movements from the medium's invention to contemporary practice, intended for learners desiring deep chronological context.</p>
+<h3 id="photographic-practice-and-critique">Photographic Practice and Critique</h3>
+<p>This subject translates technical theory and composition into practical shooting habits through recurring assignments, structured self-evaluation, and constructive critique.</p>
+<p><a href="http://www.r-photoclass.com" target="_blank" rel="noopener noreferrer">Photo Class (Alex Buisse)</a> - A 30-lesson structured curriculum featuring targeted shooting assignments designed to build deliberate technical proficiency and camera handling.</p>
+<p><a href="https://ayearwithmycamera.com/what-is-a-year-with-my-camera" target="_blank" rel="noopener noreferrer">A Year With My Camera (Emma Davies)</a> - A weekly paced, year-long alternative to Photo Class that provides a gentler, incremental sequence of projects for self-directed study.</p>
+    </article>
+  </main>
+
+</body>
+</html>

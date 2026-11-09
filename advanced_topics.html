@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Advanced Topics</title>
+  <meta name="description" content="Advanced Topics curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/photography/advanced_topics.html">
+  <meta property="og:title" content="Advanced Topics">
+  <meta property="og:description" content="Advanced Topics curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/photography/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/photography/">Photography</a></li>
+      <li><a href="/photography/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/photography/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/photography" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<p>This page branches the Core Curriculum into five independent specializations. Choose one or a few tracks aligned with your specific interests and goals rather than attempting to complete every track sequentially.</p>
+<ul>
+<li><strong>Documentary &amp; Photojournalism</strong> - The craft, field ethics, and reporting methods required to document real people, conflict, and social issues for publication.</li>
+<li><strong>Studio &amp; Portrait Lighting</strong> - Complete command of artificial illumination, from optical physics and light shaping to multi-point studio configurations and editorial portraiture.</li>
+<li><strong>Post-Production, Color &amp; Print</strong> - Advanced raw sensor data processing, strict color management, non-destructive retouching, and exhibition-grade fine art printing.</li>
+<li><strong>Fine Art &amp; Contemporary Practice</strong> - Developing sustained thematic bodies of work, photobook sequencing, creative problem-solving, and engaging with the contemporary art ecosystem.</li>
+<li><strong>Photographic Theory &amp; Criticism</strong> - The advanced philosophical and semiotic literature investigating visual culture, the apparatus, and the socio-political power of the lens.</li>
+</ul>
+<h2 id="documentary-photojournalism">Documentary &amp; Photojournalism</h2>
+<p>This track covers the ethical standards, narrative structures, and practical field methodologies necessary to execute responsible long-form visual journalism.</p>
+<p>Ethics and professional standards: <a href="https://nppa.org/code-ethics" target="_blank" rel="noopener noreferrer">Code of Ethics for Visual Journalists (National Press Photographers Association)</a> - The industry-standard ethical framework establishing legal, manipulation, and subject-treatment boundaries for visual reporters.</p>
+<p>Trauma-informed visual reporting: <a href="https://dartcenter.org/resources/dart-center-style-guide" target="_blank" rel="noopener noreferrer">Dart Center Style Guide for Trauma-Informed Journalism (Dart Center for Journalism &amp; Trauma)</a> - A practical, evidence-based guide for ethically documenting victims of disaster, violence, and social vulnerability without causing secondary harm.</p>
+<p>Visual reporting and photo essays: <a href="https://books.google.com/books?isbn=9781138101364" target="_blank" rel="noopener noreferrer">Photojournalism: The Professionals' Approach, 7th Edition (Kenneth Kobre)</a> - The canonical professional textbook covering beat reporting, pitch development, caption writing, and narrative picture editing.</p>
+<p>Contemporary documentary practice: <a href="https://photowings.org/everyday-projects-education-the-essentials" target="_blank" rel="noopener noreferrer">Everyday Projects Education: The Essentials (The Everyday Projects via PhotoWings)</a> - A free video masterclass series taught by working photojournalists focused on non-stereotyping, community-engaged documentary storytelling.</p>
+<h2 id="studio-portrait-lighting">Studio &amp; Portrait Lighting</h2>
+<p>This track covers the deliberate manipulation of artificial light, ranging from geometric optical behavior to complex multi-light commercial studio configurations.</p>
+<p>Physics of studio illumination: <a href="https://theslantedlens.com/category/lighting-tutorials/laws-of-light/" target="_blank" rel="noopener noreferrer">Laws of Light Tutorial Series (Jay P. Morgan, The Slanted Lens)</a> - A structured video course analyzing highlight, core shadow, reflected fill, and falloff on geometric forms to predict how light interacts with any subject.</p>
+<p>Systematic studio lighting setups: <a href="https://books.google.com/books?isbn=9781584281252" target="_blank" rel="noopener noreferrer">Master Lighting Guide for Portrait Photographers (Christopher Grey)</a> - A comprehensive studio manual detailing key, fill, hair, and background light ratios, modifier selections, and standardized multi-strobe patterns.</p>
+<p>Editorial portrait lighting: <a href="https://books.google.com/books?isbn=9780823085651" target="_blank" rel="noopener noreferrer">Gregory Heisler: 50 Portraits (Gregory Heisler)</a> - A masterclass in conceptual portraiture that deconstructs fifty complex editorial setups alongside the artistic and technical decisions behind them.</p>
+<h2 id="post-production-color-print">Post-Production, Color &amp; Print</h2>
+<p>This track covers the technical execution of image finishing, including sensor data interpretation, color space standardization, frequency separation, and tangible print output.</p>
+<p>Advanced RAW processing: <a href="https://books.google.com/books?isbn=9780134033174" target="_blank" rel="noopener noreferrer">The Digital Negative: Raw Image Processing in Lightroom, Camera Raw, and Photoshop, 2nd Edition (Jeff Schewe)</a> - An authoritative guide to raw demosaicing, sensor dynamic range recovery, parametric tone adjustments, and capture sharpening.</p>
+<p>Color management and calibration: <a href="https://www.northlight-images.co.uk/commercial-photography/training/colour-management" target="_blank" rel="noopener noreferrer">Colour Management Information and Training (Keith Cooper, Northlight Images)</a> - A rigorous, free technical reference covering hardware monitor calibration, ICC profile generation, rendering intents, and lighting-booth evaluation.</p>
+<p>Advanced retouching and masking: Photoshop Retouching Course (Unmesh Dinda, PiXimperfect) - search 'Photoshop Retouching Course PiXimperfect' on YouTube - A structured tutorial sequence teaching frequency separation, luminosity masking, dodge-and-burn mechanics, and seamless texture preservation.</p>
+<p>Fine art digital printing: <a href="https://books.google.com/books?isbn=9780133375787" target="_blank" rel="noopener noreferrer">The Digital Print: Preparing Images in Lightroom and Photoshop for Printing (Jeff Schewe)</a> - The definitive text on exhibition output, soft-proofing, printer color gamuts, paper coatings, and output resolution scaling.</p>
+<h2 id="fine-art-contemporary-practice">Fine Art &amp; Contemporary Practice</h2>
+<p>This track explores the conceptual frameworks, project generation techniques, sequencing methodologies, and professional dialogues that define contemporary artistic photography.</p>
+<p>Themes in contemporary photography: <a href="https://books.google.com/books?isbn=9780500204481" target="_blank" rel="noopener noreferrer">The Photograph as Contemporary Art, updated edition (Charlotte Cotton)</a> - The standard survey categorizing the conceptual strategies, aesthetics, and themes dominating gallery and museum photography since the 1980s.</p>
+<p>Project ideation and constraints: <a href="https://books.google.com/books?isbn=9781597112475" target="_blank" rel="noopener noreferrer">The Photographer's Playbook (Jason Fulford and Gregory Halpern, Aperture)</a> - A collection of over 300 assignments, prompts, and philosophical exercises designed to break creative stagnation and build coherent photographic series.</p>
+<p>Photobook history and sequencing: <a href="https://books.google.com/books?isbn=9780714842851" target="_blank" rel="noopener noreferrer">The Photobook: A History, Volume I (Martin Parr and Gerry Badger)</a> - The seminal study on the photobook as the primary medium of artistic photographic expression, emphasizing narrative sequencing and layout pacing.</p>
+<p>Contemporary artist dialogues: i3: Images, Ideas, Inspiration Lecture Series (School of Visual Arts) - search 'SVA i3 Images Ideas Inspiration' on YouTube - An extensive archive of hour-long guest lectures by leading fine art photographers discussing working methods, project development, and exhibition curation.</p>
+<h2 id="photographic-theory-criticism">Photographic Theory &amp; Criticism</h2>
+<p>This track investigates the intellectual, cultural, and political stakes of the medium through its most influential philosophical and critical texts.</p>
+<p>Ideology and the visual image: <a href="https://archive.org/details/WaysofSeeing" target="_blank" rel="noopener noreferrer">Ways of Seeing, BBC Television Series (John Berger)</a> - A seminal four-part broadcast analyzing the politics of looking, the commodification of art, and the ideological conditioning embedded in visual media.</p>
+<p>Phenomenology of the photograph: <a href="https://books.google.com/books?isbn=9780374532338" target="_blank" rel="noopener noreferrer">Camera Lucida: Reflections on Photography (Roland Barthes)</a> - The foundational philosophical essay establishing the concepts of studium and punctum to explore memory, grief, and the ontological reality of captured time.</p>
+<p>Philosophy of the apparatus: <a href="https://books.google.com/books?isbn=9781861890764" target="_blank" rel="noopener noreferrer">Towards a Philosophy of Photography (Vilém Flusser)</a> - A concise media-theory treatise arguing that automated cameras program human behavior and examining how photographers can create meaning against the program.</p>
+<p>Photography and civic power: <a href="https://books.google.com/books?isbn=9781890951894" target="_blank" rel="noopener noreferrer">The Civil Contract of Photography (Ariella Azoulay)</a> - An essential modern text exploring photography as an ongoing social contract among camera, subject, and spectator that transcends state sovereignty.</p>
+    </article>
+  </main>
+
+</body>
+</html>
